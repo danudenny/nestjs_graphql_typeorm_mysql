@@ -1,0 +1,22 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "",
+    "database": "nest_graphql",
+    "entities": ["dist/**/**.entity{.ts,.js}"],
+    "synchronize": true,
+    "logging": false,
+    "migrations": [
+        "src/modules/**/migration/*.ts"
+    ],
+    "subscribers": [
+        "src/modules/**/subscriber/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "src/modules/**/entity",
+        "migrationsDir": "src/modules/**/migration",
+        "subscribersDir": "src/modules/**/subscriber"
+    }
+}
