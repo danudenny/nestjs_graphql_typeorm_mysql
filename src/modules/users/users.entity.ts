@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-import { ObjectType, Field } from '@nestjs/graphql';
+import { ObjectType, Field, InputType } from '@nestjs/graphql';
 
 @Entity()
 @ObjectType()
@@ -29,4 +29,17 @@ export class Users {
     @UpdateDateColumn({name: 'updated_at'})
     @Field()
     updatedAt: Date;
+}
+
+
+@InputType()
+export class UserInput {
+    @Field()
+    readonly name: string;
+
+    @Field()
+    readonly username: string;
+
+    @Field()
+    readonly email: string;
 }

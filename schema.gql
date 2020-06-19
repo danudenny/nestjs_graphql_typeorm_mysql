@@ -18,4 +18,15 @@ scalar DateTime
 
 type Query {
   getAllUsers: [Users!]!
+  findUser(id: Float!): Users!
+}
+
+type Mutation {
+  createUser(input: UserInput!): Users!
+}
+
+input UserInput {
+  name: String!
+  username: String!
+  email: String!
 }
